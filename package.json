@@ -1,0 +1,15 @@
+{
+  "name": "blockhaven-minecraft-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public --d1 DB=blockhaven_db",
+    "deploy": "wrangler pages deploy public",
+    "db:init": "wrangler d1 execute blockhaven_db --local --file=./schema.sql",
+    "db:prod": "wrangler d1 execute blockhaven_db --remote --file=./schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

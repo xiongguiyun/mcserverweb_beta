@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="/assets/group-photo.jpg" as="image" type="image/jpeg" fetchpriority="high" />
+    <link rel="modulepreload" href="/app.js" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <title>Liou_Yang Server | 我的世界服务器</title>
+    <meta name="description" content="Liou_Yang Server 我的世界服务器主页与论坛公告。" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/index.html" aria-label="返回首页">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Liou_Yang Server</span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+          <a href="/index.html" class="active">首页</a>
+          <a href="/index.html#announcements">公告</a>
+          <a href="/forum.html">论坛</a>
+          <a href="/admin.html" data-admin-link hidden>后台</a>
+        </nav>
+        <div class="auth-actions" id="authActions"></div>
+      </div>
+    </header>
+
+    <section class="maintenance-gate" id="maintenanceGate" hidden>
+      <div class="maintenance-card">
+        <h1>服务器维护中</h1>
+        <div id="maintenanceGateBody"></div>
+      </div>
+    </section>
+
+    <main class="home-main">
+      <section class="hero photo-hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <h1 class="hero-title-horizontal"><span id="heroTypedTitle" data-text="Liou_Yang Server"></span><span class="type-caret" aria-hidden="true"></span></h1>
+            <p>围绕长期生存、建筑企划、活动赛季和社区故事展开的 Minecraft 服务器。</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#announcements">查看公告</a>
+              <a class="button ghost" href="/forum.html">进入论坛</a>
+            </div>
+            <dl class="server-panel">
+              <button class="server-item server-address-copy" id="copyServerAddress" type="button">
+                <dt>服务器地址</dt>
+                <dd>play.blockhaven.cn</dd>
+              </button>
+              <div class="server-item">
+                <dt>版本</dt>
+                <dd>Java 1.20+</dd>
+              </div>
+              <div class="server-item">
+                <dt>玩法</dt>
+                <dd>生存 / 建筑 / 活动</dd>
+              </div>
+            </dl>
+          </div>
+          <figure class="hero-showcase">
+            <img src="/assets/group-photo.jpg" alt="Liou_Yang Server 玩家合影" />
+            <figcaption>
+              <span>社区合影</span>
+              <strong>Survival Realm</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="feature-band" aria-label="服务器特色">
+        <div class="section-title">
+          <h2>把每次上线变成连续的世界进度</h2>
+          <p>服务器围绕长期关系设计：规则清楚、活动集中、资料可追踪，新的故事不会被聊天记录冲走。</p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="feature-icon grass"></span>
+            <h3>长期生存</h3>
+            <p>社区建设、玩家交易和长期项目同步推进，让每次上线都能继续你的世界。</p>
+          </article>
+          <article>
+            <span class="feature-icon redstone"></span>
+            <h3>论坛公告</h3>
+            <p>活动时间、维护安排和规则更新都会在公告区集中发布。</p>
+          </article>
+          <article>
+            <span class="feature-icon book"></span>
+            <h3>玩家交流</h3>
+            <p>论坛里可以发攻略、晒建筑、记活动，也能展示对应 Minecraft 皮肤形象。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="world-routes" aria-label="社区路径">
+        <div class="world-map" aria-hidden="true">
+          <span class="block b1"></span>
+          <span class="block b2"></span>
+          <span class="block b3"></span>
+          <span class="block b4"></span>
+          <span class="block b5"></span>
+        </div>
+        <div class="world-route-copy">
+          <h2>从公告到帖子，再到玩家资料</h2>
+          <p>网站结构围绕服务器日常重新整理：重要消息先到公告，讨论沉淀在论坛，玩家资料连接皮肤、历史内容与账号状态。</p>
+        </div>
+        <div class="route-list">
+          <a href="#announcements">公告更新</a>
+          <a href="/forum.html">玩家论坛</a>
+          <a href="/profile.html">玩家资料</a>
+        </div>
+      </section>
+
+      <section class="content-grid announcement-stage solid-announcement-stage" id="announcements">
+        <div class="section-title">
+          <h2>论坛公告</h2>
+          <p>服务器更新、活动安排和重要通知。</p>
+        </div>
+        <div class="list" id="announcementList"></div>
+      </section>
+    </main>
+
+    <dialog id="readerDialog">
+      <article id="readerContent"></article>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

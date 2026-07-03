@@ -1,0 +1,8 @@
+name = "blockhaven"
+compatibility_date = "2026-06-28"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "blockhaven_db"
+database_id = "b055cfdf-3f4a-41fe-989b-72b5b4ce10fd"

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="modulepreload" href="/app.js" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <title>登录账号 | Liou_Yang Server</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="login">
+    <main class="login-page">
+      <section class="login-world-card" aria-label="服务器视觉">
+        <img src="/assets/group-photo.jpg" alt="Liou_Yang Server 玩家合影" />
+        <div class="login-world-copy">
+          <strong>Liou_Yang Server</strong>
+          <span>Survival Realm</span>
+        </div>
+      </section>
+      <section class="login-card">
+        <a class="brand login-brand" href="/index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Liou_Yang Server</span>
+        </a>
+        <h1>选择入口</h1>
+        <div class="login-choice-actions">
+          <button class="button primary" type="button" id="loginChoiceButton">登录账号</button>
+          <button class="button ghost" type="button" id="registerChoiceButton">注册账号</button>
+        </div>
+        <section class="slider-captcha" id="sliderCaptcha" aria-labelledby="sliderCaptchaTitle" hidden>
+          <div class="slider-captcha-head">
+            <strong id="sliderCaptchaTitle">安全验证</strong>
+            <button class="captcha-refresh-text" type="button" id="captchaRefreshText">刷新</button>
+          </div>
+          <div class="vertifyWrap" id="captchaVertify">
+            <div class="canvasArea">
+              <canvas id="captchaCanvas" width="320" height="160"></canvas>
+              <canvas class="block" id="captchaBlock" width="320" height="160"></canvas>
+            </div>
+            <div class="sliderContainer" id="captchaSlider">
+              <div class="sliderMask" id="captchaSliderMask">
+                <button class="slider" id="captchaThumb" type="button" aria-label="拖动完成验证">
+                  <span class="sliderIcon" aria-hidden="true">→</span>
+                </button>
+              </div>
+              <div class="sliderText" id="captchaTrackText">向右滑动完成拼图</div>
+            </div>
+            <button class="refreshIcon" id="captchaRefresh" type="button" aria-label="刷新验证"></button>
+            <div class="loadingContainer" id="captchaLoading">
+              <div class="loadingIcon"></div>
+              <span id="captchaLoadingText">加载中...</span>
+            </div>
+          </div>
+        </section>
+      </section>
+      <dialog class="auth-dialog login-auth-dialog" id="loginDialog" aria-labelledby="loginDialogTitle">
+        <button class="dialog-close-button" type="button" data-dialog-close aria-label="关闭登录窗口">×</button>
+        <h2 id="loginDialogTitle">登录账号</h2>
+        <form id="loginForm" class="login-form">
+          <input id="loginUsername" autocomplete="username" placeholder="账号名" required />
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="密码" required />
+          <input id="loginTotpCode" inputmode="numeric" maxlength="6" placeholder="双重验证码（已开启时填写）" />
+          <button class="button primary" type="submit">登录账号</button>
+        </form>
+      </dialog>
+      <dialog class="auth-dialog login-auth-dialog" id="registerDialog" aria-labelledby="registerDialogTitle">
+        <button class="dialog-close-button" type="button" data-dialog-close aria-label="关闭注册窗口">×</button>
+        <h2 id="registerDialogTitle">注册账号</h2>
+        <form id="registerForm" class="login-form">
+          <input id="registerUsername" autocomplete="username" placeholder="账号名" required />
+          <input id="registerPassword" type="password" autocomplete="new-password" placeholder="密码（至少 6 位）" required />
+          <input id="registerInviteCode" autocomplete="off" placeholder="邀请码" required />
+          <button class="button primary" type="submit">注册账号</button>
+        </form>
+      </dialog>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

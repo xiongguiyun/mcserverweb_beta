@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="modulepreload" href="/app.js" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <title>玩家资料 | Liou_Yang Server</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="profile">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="/index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Liou_Yang Server</span>
+        </a>
+        <nav class="top-nav" aria-label="主导航">
+          <a href="/index.html">首页</a>
+          <a href="/index.html#announcements">公告</a>
+          <a href="/forum.html">论坛</a>
+          <a href="/admin.html" data-admin-link hidden>后台</a>
+        </nav>
+        <div class="auth-actions" id="authActions"></div>
+      </div>
+    </header>
+
+    <section class="maintenance-gate" id="maintenanceGate" hidden>
+      <div class="maintenance-card">
+        <h1>玩家资料维护中</h1>
+        <div id="maintenanceGateBody"></div>
+      </div>
+    </section>
+
+    <main class="profile-page-main">
+      <section class="page-hero profile-hero">
+        <div class="page-hero-inner">
+          <h1>玩家资料</h1>
+          <p>查看玩家角色形象、注册时间、最新发布内容和社区身份。</p>
+        </div>
+      </section>
+
+      <section class="profile-page" id="profilePage">
+        <div class="profile-panel" id="profilePanel"></div>
+        <div class="profile-posts" id="profilePosts"></div>
+      </section>
+    </main>
+
+    <dialog id="readerDialog">
+      <article id="readerContent"></article>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
